@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
-      <FlexBetween>
+      <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
@@ -55,7 +55,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          beeter
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
@@ -104,10 +104,8 @@ const Navbar = () => {
             >
               <MenuItem value={fullName}>
                 <Typography>{fullName}</Typography>
-                <MenuItem onClick={() => dispatch(setLogout())}>
-                  Log Out
-                </MenuItem>
               </MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
@@ -168,9 +166,9 @@ const Navbar = () => {
               >
                 <MenuItem value={fullName}>
                   <Typography>{fullName}</Typography>
-                  <MenuItem onClick={() => dispatch(setLogout())}>
-                    Log Out
-                  </MenuItem>
+                </MenuItem>
+                <MenuItem onClick={() => dispatch(setLogout())}>
+                  Log Out
                 </MenuItem>
               </Select>
             </FormControl>
