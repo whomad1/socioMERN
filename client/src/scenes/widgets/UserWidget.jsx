@@ -81,7 +81,7 @@ const UserWidget = ({ userId, picturePath }) => {
       <Divider />
 
       {/* SECOND ROW */}
-      <Box p="1rem 0">
+      {/* <Box p="1rem 0">
         <Box display="flex" alignItems="center" gap="1rem" mb="0.5rem">
           <LocationOnOutlined fontSize="large" sx={{ color: main }} />
           <Typography color={medium}>{location}</Typography>
@@ -92,7 +92,7 @@ const UserWidget = ({ userId, picturePath }) => {
         </Box>
       </Box>
 
-      <Divider />
+      <Divider /> */}
 
       {/* THIRD ROW */}
       <Box p="1rem 0">
