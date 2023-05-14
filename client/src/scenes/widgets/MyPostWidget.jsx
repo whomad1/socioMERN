@@ -19,13 +19,16 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import { red } from "@mui/material/colors";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
   const [post, setPost] = useState("");
+
   const { palette } = useTheme();
+  const [color, setColor] = useState(palette.primary.main);
   const { _id } = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
   const mediumMain = palette.neutral.mediumMain;
@@ -56,10 +59,21 @@ const MyPostWidget = ({ picturePath }) => {
     <WidgetWrapper>
       <FlexBetween gap="1.5rem">
         <UserImage image={picturePath} />
+
         <InputBase
           placeholder="Твит сюда..."
-          onChange={(e) => setPost(e.target.value)}
+          multiline={true}
+          onChange={(e) => {
+            if (e.target.value.length <= 215) {
+              setPost(e.target.value);
+              setColor(palette.primary.main);
+            } else {
+              setColor(red[500]);
+            }
+          }}
           value={post}
+          minRows="1"
+          maxRows="15"
           sx={{
             width: "100%",
             backgroundColor: palette.neutral.light,
@@ -126,6 +140,16 @@ const MyPostWidget = ({ picturePath }) => {
             Image
           </Typography>
         </FlexBetween>
+        <Typography
+          sx={{
+            backgroundColor: color,
+            color: palette.background.alt,
+            borderRadius: "1rem",
+            p: "7px",
+          }}
+        >
+          {post.length} / 215
+        </Typography>
         <Button
           disabled={!post}
           onClick={handlePost}
