@@ -195,6 +195,7 @@ const Form = () => {
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.email}
+                  autoComplete="off"
                   name="email"
                   error={Boolean(touched.email) && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
@@ -205,6 +206,7 @@ const Form = () => {
                   type="password"
                   onBlur={handleBlur}
                   onChange={handleChange}
+                  autoComplete="off"
                   value={values.password}
                   name="password"
                   error={Boolean(touched.password) && Boolean(errors.password)}
@@ -214,6 +216,7 @@ const Form = () => {
                 <TextField
                   label="Повторите пароль"
                   type="password"
+                  autoComplete="off"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   name="passwordConfirmation"

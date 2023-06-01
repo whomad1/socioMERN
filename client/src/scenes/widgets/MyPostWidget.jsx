@@ -137,7 +137,7 @@ const MyPostWidget = ({ picturePath }) => {
             color={mediumMain}
             sx={{ "&:hover": { cursor: "pointer", color: medium } }}
           >
-            Image
+            Пикча
           </Typography>
         </FlexBetween>
         <Typography
@@ -159,7 +159,7 @@ const MyPostWidget = ({ picturePath }) => {
             borderRadius: "3rem",
           }}
         >
-          POST
+          beet
         </Button>
       </FlexBetween>
     </WidgetWrapper>
